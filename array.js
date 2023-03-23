@@ -65,7 +65,7 @@ for (let item of num) {
         console.log(item);
     }
 }
-// let even = num.filter((item) => item % 2 === 0)
-// console.log(even);
+let even = num.filter((item) => item % 2 === 0)
+console.log(even);
 
 
