@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+/*
+a = 2
+a = 5
+b = 3
+*/
+
+<body>
+    <h1>
+        <p>DOM methods1</p>
+    </h1>
+    <h1>DOM methods2</h1>
+    <button onclick="clicked()">Click Me</button>
+    <div id="mouse">This is a mouse</div>
+    <button onclick="change()">Change to Uppercase</button>
+    <h3 class="vinay">vinay-1</h3>
+    <h3 class="vinay">vinay-2</h3>
+    <h3 class="vinay">vinay-3</h3>
+    <h3 class="vinay">vinay-4</h3>
+    <h3 class="vinay">vinay-5</h3>
+    <button onclick="sourav()">Change to Sourav</button>
+    <br>
+    <br>
+    <br>
+    <h2 id="myName">Click Submit to see the name</h2>
+    <br>
+    <label for="name">Enter your name</label>
+    <input type="text" name="name" id="name">
+    <button onclick="typed()" type="submit">Submit</button>
+    <button onclick="changeTitle()">Click to Change the Title</button>
+    <!-- <script src="index.js"></script> -->
+    <br><br>
+    <button onclick="changeStyle()">Click to Change the style</button>
+    <script>
+        let heading1 = document.getElementsByTagName("h1")[0].innerText
+        // let heading1 = document.getElementsByTagName("h1")[0].innerHTML
+        let heading2 = document.getElementsByTagName("h1")[1].innerText
+        console.log(heading1);
+        const clicked = () => {
+            let temp = heading1
+            heading1 = heading2
+            heading2 = temp
+            console.log("Clicked");
+            console.log(heading1);
+            console.log(heading2);
+            document.getElementsByTagName("h1")[0].innerText = heading1
+            document.getElementsByTagName("h1")[1].innerText = heading2
+        }
+        let text = document.getElementById("mouse").innerText
+        const change = () => {
+            document.getElementById("mouse").innerText = text.toUpperCase()
+        }
+
+        let vinays = document.getElementsByClassName('vinay')
+        const sourav = () => {
+            for (let i = 0; i < vinays.length; i++) {
+                document.getElementsByClassName('vinay')[i].innerText = `Sourav-${i + 1}`
+            }
+        }
+
+        const typed = () => {
+            let name = document.getElementById('name').value
+            console.log(name);
+            document.getElementById("myName").innerText = name
+        }
+        const changeTitle = () => {
+            document.title = "Vinay"
+        }
+        const changeStyle = () => {
+            document.getElementById("mouse").style.color = "red"
+            document.getElementById("mouse").style.fontSize = "20px"
+        }
+    </script>
+</body>
+
+</html>
